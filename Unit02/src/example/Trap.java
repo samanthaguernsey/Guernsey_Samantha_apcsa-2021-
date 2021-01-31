@@ -7,9 +7,9 @@ package example;
 
 public class Trap
 {
-	public static double area( double base1, double base2, double height )
+	public static double area( int base1, int base2, int height )
 	{
 		 
-		return (base1 + base2)/2 * height;
+		return ((double) base1 + (double) base2)/2 * (double) height;
 	}
 }
