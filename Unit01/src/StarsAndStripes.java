@@ -21,6 +21,7 @@ public class StarsAndStripes
 	   for(int i = 0; i < 20; i++){
 	       System.out.print("*");
 	   }
+	   System.out.println("");
    }
 
    public void printTwentyDashes()
@@ -28,6 +29,7 @@ public class StarsAndStripes
 	   for(int i = 0; i < 20; i++){
 	        System.out.print("-");
 	      }
+	   System.out.println("");
    }
 
    public void printTwoBlankLines()
@@ -38,11 +40,12 @@ public class StarsAndStripes
    
    public void printASmallBox()
    {	
-	   for(int i = 0; i < 2; i++){
+	   for(int i = 0; i < 3; i++){
 	        printTwentyDashes();
 	        printTwentyStars();
 	      }
 	        printTwentyDashes();
+
    }
  
    public void printABigBox()
@@ -52,5 +55,16 @@ public class StarsAndStripes
 	        printTwentyDashes();
 	        printTwentyStars();
 	      }  
-   }   
+   }
+   public static void main(String[] args) {
+	   System.out.println("Stars and stripes: ");
+	   StarsAndStripes sas = new StarsAndStripes();
+	   sas.printASmallBox();
+	   
+	   sas.printTwoBlankLines();
+	  
+	   sas.printABigBox();
+	   sas.printTwentyDashes();
+	   
+   }
 }
