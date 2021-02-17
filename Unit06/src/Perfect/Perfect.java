@@ -9,19 +9,48 @@ public class Perfect
 {
    private int number;
 
-	public Number()
+	public Perfect()
 	{
-		setNumbers
+		setNum(0);
 	}
 	
+	public Perfect(int num)
+	{
+		setNum(num);
+	}
+	
+	public void setNum(int num)
+	{
+		number = num;
+	}
 
-	//add a set method
 
 	public boolean isPerfect()
 	{
+		int num = 1;
+		int sum = 0;
+		while(num<number)
+		{
+			if(number%num == 0)
+			{
+				sum += num;
+			}
+			num++;
+		}
+		if(sum == number)
+		{
+			return true;
+		}
 		return false;
 	}
 
-	//add a toString	
+	public String toString()
+	{
+			if(isPerfect()) {
+				return number + " is perfect";
+			}
+			return number + " is not perfect";
+		
+	}
 	
 }

@@ -35,13 +35,21 @@ public class LetterRemover
 		
 		String cleaned = "";
 		int loc = 0;
-				
+		String removeLetters = "";
 		
-		while(sentence.indexOf(lookFor) < sentence.length()) {
-			System.out.println("Looping");
-			cleaned += sentence.substring( loc, sentence.indexOf(lookFor) );
-			loc = sentence.indexOf(lookFor);
+		for(int i = 0; i < sentence.length(); i++)
+		{
+			if(sentence.charAt(i) == lookFor)
+			{
+				removeLetters += sentence.charAt(i);
+			}
+			else
+			{
+				cleaned += sentence.charAt(i);
+			}
+			
 		}
+		out.println(removeLetters);
 		
 		return cleaned;
 		
@@ -49,8 +57,6 @@ public class LetterRemover
 
 	public String toString()
 	{
-	
-		removeLetters();
-		return sentence + " - letter to remove " + lookFor;
+		return sentence + " - letter to remove " + lookFor + " / cleaned: " + removeLetters();
 	}
 }
