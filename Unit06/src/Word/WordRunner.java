@@ -17,9 +17,7 @@ public class WordRunner
 		
 		Word test = new Word();
 		test.setString(wordEntered);
-		out.println("You entered " + wordEntered);
-		out.println("First char: " + test.getFirstChar());
-		out.println("Last char: " + test.getLastChar());
-		out.println("Backwards: " + test.getBackWards());
+		test.toString();
+		System.out.print(test.toString());
 	}
 }

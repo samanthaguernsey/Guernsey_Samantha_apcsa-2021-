@@ -1,15 +1,11 @@
-package TenToAny;
 //(c) A+ Computer Science
 //www.apluscompsci.com
 //Name -
+//Date -
 
-import static java.lang.System.*;
-
-public class TenToAnyRunner
+public class DownRunner
 {
 	public static void main( String args[] )
-	{
-		//add test cases	
-		
+	{											
 	}
 }

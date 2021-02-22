@@ -50,6 +50,12 @@ public class Word
 
  	public String toString()
  	{
- 		return "";
+ 		setString(word);
+ 		getFirstChar();
+ 		getLastChar();
+ 		getBackWards();
+ 		
+ 		return  "" + getFirstChar() + getLastChar() + getBackWards();
+ 	
 	}
 }

@@ -26,15 +26,12 @@ public class TriangleOne
 
 	public void print( )
 	{
+		String myString =  "";
 		int size = word.length();
-		for(int i = 1; i <= size; i++)
+		for(int i = size; i > 0; i--)
 		{
-			for(int j = 0; j <= size; j++)
-			{
-				if(j<=i)
-				out.print(word.substring(0,i));
-			}
-			out.println("");
+			myString += word.substring(0, i) + "\n";
 		}
+		System.out.println(myString);
 	}
 }

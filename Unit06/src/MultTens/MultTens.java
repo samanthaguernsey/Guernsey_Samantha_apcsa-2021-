@@ -9,10 +9,15 @@ public class MultTens
 {
 	public static String go(  int x )
 	{
-		for(int i = 0; i < 10; i++)
+		String myString = "";
+		if(x <= 0)
 		{
-			
+			return "aplus";
 		}
-		return "code goes here";
+		for(int i = 1; i < x+1; i++)
+		{
+			myString += i + "0"; 
+		}
+		return myString;
 	}
 }

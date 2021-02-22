@@ -17,7 +17,8 @@ public class TriangleOneRunner
 		test.setWord("chicken");
 		System.out.println(test);
 		test.print();
-	
+		
+		System.out.println();
 	
 		
 	}
