@@ -20,6 +20,7 @@ public class OddToEvenRunner
 		System.out.println( s.go( new int[]{7,7,7,11,2,7,7,11,11,2} ) );
 		System.out.println( s.go( new int[]{2,4,6,8,8} ) );
 		
+		s.toString();
 	
 	}
 }

@@ -48,15 +48,10 @@ public class RayOddToEven
 	
 	
 	
-	public String toString() // to string doesn't do anything
+	public String toString()
 	{
-		String output = "";
-		boolean x = false;
-		int d = 0;
-		for(int i = 0; i < ray.length; i++)
-		{
-			return "hi";
-		}
-		return "hi2";
+		setRay(ray);
+		String myGo = String.valueOf(go(ray));
+		return myGo;
 	}
 }
