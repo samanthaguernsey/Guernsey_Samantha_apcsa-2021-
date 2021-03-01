@@ -7,7 +7,7 @@ package OddToEven;
 public class RayOddToEven
 {
 	
-	int[] ray;
+	private int[] ray;
 	
 	public RayOddToEven()
 	{
