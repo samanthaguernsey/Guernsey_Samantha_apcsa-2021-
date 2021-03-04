@@ -44,8 +44,6 @@ public class RoundSum {
 	}
 	public String toString()
 	{
-		
-		
 		return String.valueOf(round10(a) + round10(b) + round10(c));
 	}
 	
