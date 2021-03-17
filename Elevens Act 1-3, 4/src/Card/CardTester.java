@@ -1,4 +1,5 @@
 package Card;
+import java.util.Scanner;
 /**
  * This is a class that tests the Card class.
  */
@@ -9,6 +10,23 @@ public class CardTester {
 	 *	@param args is not used.
 	 */
 	public static void main(String[] args) {
+		System.out.println("Enter rank: ");
+		Scanner keyboard = new Scanner(System.in);
+		String tempOne = keyboard.next();
+		
+		System.out.println("Enter suit: ");
+		String tempTwo = keyboard.next();
+		
+		
+		int pointValue = 0;
+		if(tempOne ==  "ace")
+		{
+			pointValue = 1;
+		}
+		else pointValue = 0;
+		
+		Card myCard = new Card(tempOne, tempTwo, pointValue);
+		
 		Card aceClubs1 = new Card("ace", "clubs", 1);
 		Card aceClubs2 = new Card("ace", "clubs", 1);
 		Card sixHearts = new Card("6", "hearts", 6);

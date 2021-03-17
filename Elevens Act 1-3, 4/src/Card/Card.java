@@ -21,7 +21,7 @@ public class Card {
 	 */
 	private int pointValue;
 
-
+	
    /**
 	 * Creates a new <code>Card</code> instance.
 	 *
@@ -75,6 +75,9 @@ public class Card {
 		&& otherCard.pointValue() == this.pointValue();
 	}
 
+	
+	
+	
 	/**
 	 * Converts the rank, suit, and point value into a string in the format
 	 *     "[Rank] of [Suit] (point value = [PointValue])".
