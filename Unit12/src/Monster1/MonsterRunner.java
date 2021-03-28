@@ -27,8 +27,7 @@ public class MonsterRunner
 		
 		if(mOne.isBigger(mTwo) == true)
 		{
-			out.println("Monster one is > than Monster two");
-			
+			out.println("Monster one is > than Monster two");		
 		}
 		
 		if(mOne.isSmaller(mTwo) == true)

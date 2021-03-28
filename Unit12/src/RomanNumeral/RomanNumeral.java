@@ -18,34 +18,95 @@ public class RomanNumeral implements Comparable<RomanNumeral>
 
 	public RomanNumeral(String str)
 	{
-		roman = str;
+		int sum = 0; 
+		for(int x = 0; x < str.length(); x++)
+		{
+			String temp = " " + str.charAt(x);
+			if(temp.equals(LETTERS[x]))
+				sum += NUMBERS[x];
+		}
+		number = sum;
 	}
 
 	public RomanNumeral(Integer orig)
 	{
-		number = orig;
-		//convert here
+		String myRom = "";
+		int temp = orig;
+		for(int x = 0; x < NUMBERS.length; x++)
+		{
+			if(temp-NUMBERS[x] >= 0)
+			{
+				myRom+=LETTERS[x];
+				temp -= NUMBERS[x];
+				x=0;
+			}
+		}
+ 
+		roman = myRom;	
 	}
 
 	//write a set number method
-	
+	public void setNumber(int orig)
+	{
+		String myRom = "";
+		int temp = orig;
+		for(int x = 0; x < NUMBERS.length; x++)
+		{
+			if(temp-NUMBERS[x] >= 0)
+			{
+				myRom+=LETTERS[x];
+				temp -= NUMBERS[x];
+				x=0;
+			}
+		}
+ 
+		roman = myRom;
+	}
 	
 	
 	//write a set roman method
-
+	public void setRoman(String str)
+	{
+		int sum = 0; 
+		for(int x = 0; x < str.length(); x++)
+		{
+			String temp = " " + str.charAt(x);
+			if(temp.equals(LETTERS[x]))
+				sum += NUMBERS[x];
+		}
+		number = sum;
+		this.setNumber(sum);
+		
+	}
 
 	//write get methods for number and roman
-	
+	public int getNumber()
+	{
+		return this.number;
+	}
+	public String getRoman()
+	{
+		return this.roman;
+	}
 	
 
 	public int compareTo(RomanNumeral r)
 	{
-		//compare integers
-		return 0;
+		
+		
+		if(getRoman().compareTo(r.getRoman()) != -1)
+		{
+			return 0;
+		}
+		else return -1;
 	}
 
 	//write  toString() method
-	
+	public String toString()
+	{
+		
+		return "" + roman;
+	}
 	
 	
 }
