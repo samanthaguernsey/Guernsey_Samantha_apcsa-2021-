@@ -121,10 +121,10 @@ public abstract class Board {
 	 * @return a List that contains the locations (indexes)
 	 *         of the non-null entries on the board.
 	 */
-	public List<Integer> cardIndexes() {
+	public List<Integer> cardIndexes() { //for once almost all cards have been drawn
 		List<Integer> selected = new ArrayList<Integer>();
 		for (int k = 0; k < cards.length; k++) {
-			if (cards[k] != null) {
+			if (cards[k] != null) { //if card not null, add to array list of integers which indexes do have cards on them
 				selected.add(new Integer(k));
 			}
 		}

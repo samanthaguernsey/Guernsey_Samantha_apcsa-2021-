@@ -60,9 +60,9 @@ public class Shuffler {
 	 * the cards in one half with the cards in the other.
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
-	public static void perfectShuffle(int[] values) {
+	public static void perfectShuffle(int[] values) { //break cards in half, weave card so bottom on left goes under bottom of right stack which goes under 2nd to bottom on left
 		int[] temp = new int[values.length];
-		int k = 0;
+		int k = 0; //first loop must copy one more card than second (if odd # cards is shuffled, temp has 1 more even indexed position than odd)
 		for(int j = 0; j < values.length/2; j++)
 		{
 			temp[k] = values[j];
@@ -94,7 +94,7 @@ public class Shuffler {
 	 * searching for an as-yet-unselected card.
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
-	public static void selectionShuffle(int[] values) {
+	public static void selectionShuffle(int[] values) {//random card to put end of list, remaining choose card put next to
 		
 		for(int i = values.length-1; i > 0; i--)
 		{

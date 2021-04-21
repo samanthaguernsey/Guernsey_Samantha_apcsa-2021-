@@ -38,12 +38,12 @@ public class Deck {
 	{
 		
 		cards = new ArrayList<Card>();
-		for(int j = 0; j < myRanks.length; j++)
+		for(int j = 0; j < myRanks.length; j++) //go through ranks
 		{
-			for(String suitString : mySuits)
+			for(String suitString : mySuits) //go through suits of ranks
 			{
 				Card newCard = new Card(myRanks[j], suitString, myValues[j]);
-				cards.add(newCard);
+				cards.add(newCard); //add each card to deck
 				
 			}
 		}
@@ -90,7 +90,7 @@ public class Deck {
 	
 	
 	
-	public void shuffle() {// list random
+	public void shuffle() {//pull random card and put it on top
 		for(int k = cards.size() - 1; k > 0; k--)
 		{
 			int howMany = k + 1;
@@ -125,13 +125,14 @@ public class Deck {
 	 * @return the card just dealt, or null if all the cards have been
 	 *         previously dealt.
 	 */
-	public Card deal() {
+	public Card deal() {  
+//deals a card by removing it from deck and returning it if there are cards left in deck
 		if(isEmpty())
 		{
 			return null;
 		}
 		size --;
-		Card c = cards.get(size); 
+		Card c = cards.get(size); //current card at top of deck 
 		//Card c = cards[size];
 		return c;
 	}
