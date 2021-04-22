@@ -1,4 +1,4 @@
-package Pong2;
+package Pong1;
 //(c) A+ Computer Science
 //www.apluscompsci.com
 //Name -
@@ -19,7 +19,7 @@ public class Block implements Locatable
 	{
 		xPos = 100;
 		yPos = 150;
-		width = 10;
+		width = 10; 
 		height = 10;
 		color = Color.black;
 
@@ -108,5 +108,27 @@ public class Block implements Locatable
     	return xPos;
     }
 
+    public int getY()
+    {
+    	return yPos;
+    }
+    public int getWidth()
+    {
+    	return width;
+    }
+    public int getHeight()
+    {
+    	return height;
+    }
+    public Color getColor()
+    {
+    	return color;
+    }
+    
    //add a toString() method  - x , y , width, height, color
+    public String toString()
+    {
+    	return xPos + " " + yPos  + " " + width + " " + height + " "
+    		+ color + " ";
+    }
 }
