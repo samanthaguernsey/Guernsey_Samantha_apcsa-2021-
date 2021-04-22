@@ -90,9 +90,16 @@ public class Block implements Locatable
 		
 	}
 	
+	public void draw(Graphics window, Color col)
+	{
+		window.setColor(col);
+		window.fillRect(getX(), getY(), getWidth(), getHeight());
+		
+	}
+	
 	public boolean equals(Object obj)
 	{
-		Block other = (Object obj);
+		Block other = (Block)obj;
 		if(getX() == other.getX() && getY() == other.getY() &&
 			getWidth() == other.getWidth() && getHeight() == other.getHeight()
 			&& getColor().equals(other.getColor()))
@@ -124,6 +131,8 @@ public class Block implements Locatable
     {
     	return color;
     }
+    
+    
     
    //add a toString() method  - x , y , width, height, color
     public String toString()

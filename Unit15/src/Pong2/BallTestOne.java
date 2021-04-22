@@ -26,7 +26,7 @@ class BallTestOne
 		out.println(five);
 		
 									//x, y, wid, ht, color, xSpd, ySpd
-		Ball six = new Ball(100,100,30,50,Color.blue,5,6);
+		Ball six = new Ball(100,100,30,50,Color.BLUE,5,6);
 		out.println(six);		
 		
 		out.println(five.equals(four));		

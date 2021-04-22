@@ -37,7 +37,7 @@ public class Paddle extends Block
 	   speed = s;
    }
    
-   public Paddle(int x, int y, int wid, int ht, Color col int s)
+   public Paddle(int x, int y, int wid, int ht, Color col, int s)
    {
 	  super(x, y, wid, ht, col);
 	  speed = s;
