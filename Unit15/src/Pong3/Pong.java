@@ -206,13 +206,6 @@ twoDGraph.drawImage(back,null,0,0);
 }
 
 
-   public void setPos( int x, int y);
-   public void setX( int x );
-   public void setY( int y );
-
-   public int getX();
-   pub
-
 		
 		
 
