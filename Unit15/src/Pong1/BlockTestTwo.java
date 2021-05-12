@@ -29,7 +29,6 @@ public class BlockTestTwo extends Canvas
 
 		Block four = new Block(450,50,20,60, Color.GREEN);
 		four.draw(window);
-		
-		//add more test cases			
+			
 	}
 }
