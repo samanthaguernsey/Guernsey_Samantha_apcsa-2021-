@@ -1,4 +1,4 @@
-package Pong2;
+package Pong3;
 //(c) A+ Computer Science
 //www.apluscompsci.com
 //Name -
@@ -14,7 +14,7 @@ public class Ball extends Block
 	public Ball()
 	{
 		super(200,200);
-		xSpeed = 3;
+		setxSpeed(3);
 		ySpeed = 1;
 	}
 
@@ -23,36 +23,41 @@ public class Ball extends Block
 	public Ball(int x, int y)
 	{
 		super(x, y);
-		xSpeed = 3;
+		setxSpeed(3);
 		ySpeed = 1;
 	}
 	
 	public Ball(int x, int y, int wid, int ht)
 	{
 		super(x, y, wid, ht);
-		xSpeed = 3;
-		xSpeed = 1;
+		setxSpeed(3);
+		setxSpeed(1);
 	}
 	
 	public Ball(int x, int y, int wid, int ht, Color col)
 	{
 		super(x, y, wid, ht, col);
-		xSpeed = 3;
-		xSpeed = 1;
+		setxSpeed(3);
+		setxSpeed(1);
 	}
 	
 	public Ball(int x, int y, int wid, int ht, int xSpd, int ySpd)
 	{
 		super(x, y, wid, ht);
-		xSpeed = xSpd;
-		xSpeed = ySpd;
+		setxSpeed(xSpd);
+		setxSpeed(ySpd);
 	}
 	
-	public Ball(int x, int y, int wid, int ht, Color cool, int )
+	public Ball(int x, int y, int wid, int ht, Color col, int xSpd, int ySpd)
+	{
+		super(x, y, wid, ht, col);
+		setxSpeed(xSpd);
+		setxSpeed(ySpd);
+	}
 	
 	public void setXSpeed(int xSpd)
 	{
-		xSpeed = xSpd;
+		setxSpeed(xSpd);
 	}
 	
 	public void setYSpeed(int ySpd)
@@ -69,7 +74,7 @@ public class Ball extends Block
    	//draw a white ball at old ball location
 	   draw(window, Color.white);
 
-      setX(getX()+xSpeed);
+      setX(getX()+getxSpeed());
 		//setY
       setY(getY()+ySpeed);
 		//draw the ball at its new location
@@ -92,6 +97,27 @@ public class Ball extends Block
 	}   
 
    //add the get methods
-
+	public int getXSpeed()
+	{
+		return getxSpeed();
+	}
+	public int getYSpeed()
+	{
+		return ySpeed;
+	}
+	
+	
    //add a toString() method
+	public String toString()
+	{
+		return super.toString() + "xSpeed: " + getxSpeed() + "ySpeed: " + ySpeed;
+	}
+
+	public int getxSpeed() {
+		return xSpeed;
+	}
+
+	public void setxSpeed(int xSpeed) {
+		this.xSpeed = xSpeed;
+	}
 }

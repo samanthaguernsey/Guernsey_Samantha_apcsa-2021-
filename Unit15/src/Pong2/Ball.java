@@ -48,6 +48,13 @@ public class Ball extends Block
 		xSpeed = ySpd;
 	}
 	
+	public Ball(int x, int y, int wid, int ht, Color col, int xSpd, int ySpd)
+	{
+		super(x, y, wid, ht, col);
+		xSpeed = xSpd;
+		xSpeed = ySpd;
+	}
+	
 	public void setXSpeed(int xSpd)
 	{
 		xSpeed = xSpd;
@@ -90,6 +97,19 @@ public class Ball extends Block
 	}   
 
    //add the get methods
-
+	public int getXSpeed()
+	{
+		return xSpeed;
+	}
+	public int getYSpeed()
+	{
+		return ySpeed;
+	}
+	
+	
    //add a toString() method
+	public String toString()
+	{
+		return super.toString() + "xSpeed: " + xSpeed + "ySpeed: " + ySpeed;
+	}
 }

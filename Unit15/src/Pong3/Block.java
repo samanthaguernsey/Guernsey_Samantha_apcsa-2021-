@@ -1,4 +1,4 @@
-package Pong2;
+package Pong3;
 //(c) A+ Computer Science
 //www.apluscompsci.com
 //Name -
@@ -19,7 +19,7 @@ public class Block implements Locatable
 	{
 		xPos = 100;
 		yPos = 150;
-		width = 10;
+		width = 10; 
 		height = 10;
 		color = Color.black;
 
@@ -90,9 +90,16 @@ public class Block implements Locatable
 		
 	}
 	
+	public void draw(Graphics window, Color col)
+	{
+		window.setColor(col);
+		window.fillRect(getX(), getY(), getWidth(), getHeight());
+		
+	}
+	
 	public boolean equals(Object obj)
 	{
-		Block other = (Object obj);
+		Block other = (Block)obj;
 		if(getX() == other.getX() && getY() == other.getY() &&
 			getWidth() == other.getWidth() && getHeight() == other.getHeight()
 			&& getColor().equals(other.getColor()))
@@ -108,5 +115,29 @@ public class Block implements Locatable
     	return xPos;
     }
 
+    public int getY()
+    {
+    	return yPos;
+    }
+    public int getWidth()
+    {
+    	return width;
+    }
+    public int getHeight()
+    {
+    	return height;
+    }
+    public Color getColor()
+    {
+    	return color;
+    }
+    
+    
+    
    //add a toString() method  - x , y , width, height, color
+    public String toString()
+    {
+    	return xPos + " " + yPos  + " " + width + " " + height + " "
+    		+ color + " ";
+    }
 }
