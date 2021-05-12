@@ -1,3 +1,4 @@
+package Pong3;
 //(c) A+ Computer Science
 //www.apluscompsci.com
 //Name -
@@ -20,6 +21,11 @@ public class Pong extends Canvas implements KeyListener, Runnable
 	private Paddle rightPaddle;
 	private boolean[] keys;
 	private BufferedImage back;
+	private int leftScore;
+	private int rightScore;
+	
+	private boolean hitLeftPaddle = false;
+	private boolean hitRightPaddle = false;
 
 
 	public Pong()
@@ -125,7 +131,7 @@ public class Pong extends Canvas implements KeyListener, Runnable
 		
 		if(!(ball.getY() >=20 && ball.getY()<=450))
 		{
-			ball.setYSpeed(-ball.getSpeed());
+			ball.setYSpeed(-ball.getXSpeed());
 			if(ball.getY() < 20 && hitLeftPaddle)
 			{
 				hitLeftPaddle = false;
@@ -167,11 +173,11 @@ public class Pong extends Canvas implements KeyListener, Runnable
 			&&
 			(ball.getY()-ball.getHeight() >= rightPaddle.getY() &&
 			ball.getY()-ball.getHeight() <= rightPaddle.getY() + rightPaddle.getHeight() ||
-			ball.getY()-ball.getHeight() + rightPaddle.getY()&&
-			ball.getY()-ball.getHeight() + rightPaddle.getY() <= leftPaddle.getY() + leftPaddle.getHeight()))
+			ball.getY()-ball.getHeight() >= rightPaddle.getY() &&
+			ball.getY()-ball.getHeight() <= rightPaddle.getY() + leftPaddle.getHeight()))
 		{
 			hitRightPaddle = true;
-			if(ball.getX()+ball.getWidth >= rightPaddle.getX()+Math.abs(ball.getXSpeed()))
+			if(ball.getX()+ball.getWidth() >= rightPaddle.getX()+Math.abs(ball.getXSpeed()))
 			{
 				ball.setYSpeed(-ball.getYSpeed());
 				
@@ -231,13 +237,8 @@ twoDGraph.drawImage(back,null,0,0);
 		}
 	}
 
-    public void setPos( int x, int y);
-    public void setX( int x );
-    public void setY( int y );
-
-    public int getX();
-    pub
-	public void keyTyped(KeyEvent e){}
+   
+public void keyTyped(KeyEvent e){}
 	
    public void run()
    {

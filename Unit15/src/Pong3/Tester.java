@@ -4,6 +4,9 @@ package Pong3;
 //Name -
  
 import javax.swing.JFrame;
+
+import Pong1.BlockTestTwo;
+
 import java.awt.Component;
 
 public class Tester extends JFrame
@@ -19,7 +22,7 @@ public class Tester extends JFrame
 		//getContentPane().add(new BlockTestTwo());
 
 		//uncomment when you are ready to test the Ball
-		//getContentPane().add(new BallTestTwo());
+		getContentPane().add(new BlockTestTwo());
 
 		PaddleTestTwo padTest = new PaddleTestTwo();
 		((Component)padTest).setFocusable(true);
