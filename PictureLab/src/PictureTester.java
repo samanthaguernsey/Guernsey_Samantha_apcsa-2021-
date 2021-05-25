@@ -13,6 +13,7 @@ public class PictureTester
   public static void testZeroBlue()
   {
     Picture beach = new Picture("images/beach.jpg");
+    beach.explore();
     beach.zeroBlue();
     beach.explore();
   }
@@ -29,7 +30,7 @@ public class PictureTester
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
   {
-    Picture temple = new Picture("temple.jpg");
+    Picture temple = new Picture("images/temple.jpg");
     temple.explore();
     temple.mirrorTemple();
     temple.explore();
@@ -38,7 +39,7 @@ public class PictureTester
   /** Method to test the collage method */
   public static void testCollage()
   {
-    Picture canvas = new Picture("640x480.jpg");
+    Picture canvas = new Picture("images/640x480.jpg");
     canvas.createCollage();
     canvas.explore();
   }
@@ -54,14 +55,15 @@ public class PictureTester
   /** Method to test edgeDetection2 */
   public static void testEdgeDetection2()
   {
-    Picture swan = new Picture("swan.jpg");
+    Picture swan = new Picture("images/swan.jpg");
+    swan.explore();
     swan.edgeDetection(30);
     swan.explore();
   }
   /** Method to test keepOnlyBlue */
   public static void testKeepOnlyBlue()
   {
-    Picture beach = new Picture("beach.jpg");
+    Picture beach = new Picture("images/beach.jpg");
     beach.explore();
     beach.keepOnlyBlue();
     beach.explore();
@@ -69,15 +71,15 @@ public class PictureTester
   
   public static void testKeepOnlyRed()
   {
-    Picture beach = new Picture("beach.jpg");
-    beach.explore();
-    beach.keepOnlyRed();
-    beach.explore();
+    Picture mot = new Picture("images/redMotorcycle.jpg");
+    mot.explore();
+    mot.keepOnlyRed();
+    mot.explore();
   }
   
   public static void testKeepOnlyGreen()
   {
-    Picture beach = new Picture("beach.jpg");
+    Picture beach = new Picture("images/beach.jpg");
     beach.explore();
     beach.keepOnlyGreen();
     beach.explore();
@@ -85,7 +87,7 @@ public class PictureTester
   /** Method to test Grayscale */
   public static void testGrayscale()
   {
-    Picture beach = new Picture("beach.jpg");
+    Picture beach = new Picture("images/beach.jpg");
     beach.explore();
     beach.Grayscale();
     beach.explore();
@@ -93,7 +95,7 @@ public class PictureTester
   /** Method to test negate */
   public static void testNegate()
   {
-    Picture beach = new Picture("beach.jpg");
+    Picture beach = new Picture("images/beach.jpg");
     beach.explore();
     beach.negate();
     beach.explore();
@@ -103,9 +105,9 @@ public class PictureTester
   /** Method to test mirrorTemple */
   public static void testMirrorArms()
   {
-    Picture snowman = new Picture("snowman.jpg");
+    Picture snowman = new Picture("images/snowman.jpg");
     snowman.explore();
-    snowman.negate();
+    snowman.mirrorArms();
     snowman.explore();
   }
   
@@ -121,7 +123,7 @@ public class PictureTester
   /** Method to test copy */
   public static void testCopy()
   {
-    Picture gull = new Picture("gull.jpg");
+    Picture gull = new Picture("images/seagull.jpg");
     gull.explore();
     gull.copy(gull, 12, 14);
     gull.explore();
@@ -154,13 +156,13 @@ public class PictureTester
   
   public static void testfixUnderwater()
   {
-    Picture gull = new Picture("images/seagull.jpg");
-    gull.explore();
-    gull.fixUnderwater();
-    gull.explore();
+    Picture water = new Picture("images/water.jpg");
+    water.explore();
+    water.fixUnderwater();
+    water.explore();
   }
   
-  public static void testMirorDiagonal()
+  public static void testMirrorDiagonal()
   {
     Picture gull = new Picture("images/seagull.jpg");
     gull.explore();
@@ -168,33 +170,32 @@ public class PictureTester
     gull.explore();
   }
   
+
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
   {
-    // uncomment a call here to run a test
-    // and comment out the ones you don't want
-    // to run
- //   testZeroBlue();
+  //  testZeroBlue();
 //    testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
-//    testNegate();
-  //  testGrayscale();f
+  //  testNegate();
+  //  testGrayscale();
 	//  testfixUnderwater();
   // testMirrorVertical();
-//    testMirrorTemple();
+   // testMirrorTemple();
 //    testMirrorArms();
  //   testMirrorGull();
-// testMirorDiagonal();
-//    testCollage();
-//     testCopy();
- //   testEdgeDetection();
-//    testEdgeDetection2();
+// testMirrorDiagonal();
+ //   testCollage();
+   //  testCopy();
+  //  testEdgeDetection();
+	//    testEdgeDetection2();
    
   //  testGetCountRedOverValue(250); //inc counter if over 250
-   // testSetRedToHalfValueInTopHalf(); //grad  red in top half of image set to half its value
+  //  testSetRedToHalfValueInTopHalf(); //grad  red in top half of image set to half its value
   //  testClearBlueOverValue(200); //make 0
+
    
   }
 }

@@ -132,16 +132,14 @@ public class Picture extends SimplePicture
     int count = 0;
     Pixel[][] pixels = this.getPixels2D();
     
-    // loop through the rows
+   
     for (int row = 27; row < 97; row++)
     {
-      // loop from 13 to just before the mirror point
+    
       for (int col = 13; col < mirrorPoint; col++)
       {
-        
         leftPixel = pixels[row][col];      
-        rightPixel = pixels[row]                       
-                         [mirrorPoint - col + mirrorPoint];
+        rightPixel = pixels[row][mirrorPoint - col + mirrorPoint];
         rightPixel.setColor(leftPixel.getColor());
       }
     }
@@ -450,16 +448,42 @@ public class Picture extends SimplePicture
 	  {
 		  for(int j = 0; j < pixels[i].length; j++)
 		  {
-			 if(pixels[i][j].getBlue() > redValue)
+			 if(pixels[i][j].getRed() > redValue)
 			 {
 				 counter++;
 			 }
 		  }
 	  }
 	  return counter;
+
   }
  
-
+  /**
+   * Method to replace the blue background with the pixels in the newBack
+   * picture
+   * 
+   * @param newBack
+   *            the picture to copy from
+   */
+  public void chromakey( Picture newBack )
+  {
+      Pixel fromPixel = null;
+      Pixel toPixel = null;
+      Pixel[][] toPixels = this.getPixels2D();
+      Pixel[][] fromPixels = newBack.getPixels2D();
+      for ( int row = 0; row < this.getHeight(); row++ )
+      {
+          for ( int col = 0; col < this.getWidth(); col++ )
+          {
+              toPixel = toPixels[row][col];
+              if ( toPixel.getBlue() > toPixel.getRed() )
+              {
+                  fromPixel = fromPixels[row][col];
+                  toPixel.setColor( fromPixel.getColor() );
+              }
+          }
+      }
+  }
   
   
   
