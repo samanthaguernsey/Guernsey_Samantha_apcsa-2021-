@@ -170,6 +170,14 @@ public class PictureTester
     gull.explore();
   }
   
+  public static void testBlur(int x, int y, int w, int h, int n)
+  {
+     Picture redMoto = new Picture("images/redMotorcycle.jpg");
+     for (int i = 0; i<n; i++){
+        redMoto.blur(x,y,w,h);
+      }
+      redMoto.explore();
+  }
 
   /** Main method for testing.  Every class can have a main
     * method in Java */
@@ -195,6 +203,7 @@ public class PictureTester
   //  testGetCountRedOverValue(250); //inc counter if over 250
   //  testSetRedToHalfValueInTopHalf(); //grad  red in top half of image set to half its value
   //  testClearBlueOverValue(200); //make 0
+	  testBlur(180,160,25,25,10); 
 
    
   }

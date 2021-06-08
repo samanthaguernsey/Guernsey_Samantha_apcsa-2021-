@@ -13,8 +13,10 @@ import java.util.List; // resolves problem with java.awt.List and java.util.List
  * 
  * @author Barbara Ericson ericson@cc.gatech.edu
  */
+
 public class Picture extends SimplePicture 
 {
+	
   ///////////////////// constructors //////////////////////////////////
   
   /**
@@ -22,6 +24,7 @@ public class Picture extends SimplePicture
    */
   public Picture ()
   {
+	  
     /* not needed but use it to show students the implicit call to super()
      * child constructors always call a parent constructor 
      */
@@ -36,6 +39,7 @@ public class Picture extends SimplePicture
   {
     // let the parent class handle this fileName
     super(fileName);
+    
   }
   
   /**
@@ -47,6 +51,7 @@ public class Picture extends SimplePicture
   {
     // let the parent class handle this width and height
     super(width,height);
+    System.out.println("Samantha Guernsey P3 May 25, 2021");
   }
   
   /**
@@ -78,6 +83,7 @@ public class Picture extends SimplePicture
    */
   public String toString()
   {
+	 System.out.println("Samantha Guernsey P3 May 25, 2021");
     String output = "Picture, filename " + getFileName() + 
       " height " + getHeight() 
       + " width " + getWidth();
@@ -442,6 +448,7 @@ public class Picture extends SimplePicture
 
   public int getCountRedOverValue(int redValue)
   {
+	  System.out.println("Samantha Guernsey P3 May 25, 2021");
 	  int counter = 0;
 	  Pixel[][] pixels = this.getPixels2D();
 	  for(int i = 0; i < pixels.length; i++)
@@ -458,33 +465,58 @@ public class Picture extends SimplePicture
 
   }
  
-  /**
-   * Method to replace the blue background with the pixels in the newBack
-   * picture
-   * 
-   * @param newBack
-   *            the picture to copy from
-   */
-  public void chromakey( Picture newBack )
-  {
-      Pixel fromPixel = null;
-      Pixel toPixel = null;
-      Pixel[][] toPixels = this.getPixels2D();
-      Pixel[][] fromPixels = newBack.getPixels2D();
-      for ( int row = 0; row < this.getHeight(); row++ )
-      {
-          for ( int col = 0; col < this.getWidth(); col++ )
-          {
-              toPixel = toPixels[row][col];
-              if ( toPixel.getBlue() > toPixel.getRed() )
-              {
-                  fromPixel = fromPixels[row][col];
-                  toPixel.setColor( fromPixel.getColor() );
-              }
-          }
-      }
-  }
+
   
-  
-  
+ public void blur(int x, int y, int w, int h)
+ {
+	 System.out.println("Samantha Guernsey P3 May 25, 2021");
+	 Pixel[][] pixels = this.getPixels2D();
+	 Pixel leftPixel = null;
+     Pixel rightPixel = null;
+     Pixel topPixel = null;
+     Pixel bottomPixel = null;
+     Pixel topLeft = null;
+     Pixel topRight = null;
+     Pixel bottomLeft = null;
+     Pixel bottomRight = null;
+     w = this.getWidth();
+     h = this.getHeight();
+     
+     Pixel myPixel = null;
+     
+
+     for (int row = 0; row < h; row++)
+     {
+         for (int col = 0; col < w; col++)
+         {
+        	leftPixel = pixels[h][w-1];      
+ 	        rightPixel = pixels[h][w+1];
+ 	        topPixel = pixels[h+1][w];
+            bottomPixel = pixels[h-1][w];
+            topLeft = pixels[h+1][w-1];
+            topRight = pixels[h+1][w+1];
+            bottomLeft = pixels[h-1][w-1];
+            bottomRight = pixels[h-1][w+1];
+            myPixel = pixels[h][w];
+        	int average = (leftPixel.getGreen() + leftPixel.getBlue() + leftPixel.getRed() +
+        			 rightPixel.getGreen() + rightPixel.getBlue() + rightPixel.getRed() +
+        			 topPixel.getGreen() + topPixel.getBlue() + topPixel.getRed() +
+        			 bottomPixel.getGreen() + bottomPixel.getBlue() + bottomPixel.getRed() +
+        			 topLeft.getGreen() + topLeft.getBlue() + topLeft.getRed() +
+        			 topRight.getGreen() + topRight.getBlue() + topRight.getRed() +
+        			 bottomLeft.getGreen() + bottomLeft.getBlue() + bottomLeft.getRed() +
+        			 bottomRight.getGreen() + bottomRight.getBlue() + bottomRight.getRed() +
+        			 myPixel.getGreen() + myPixel.getBlue() + myPixel.getRed()
+        			 / 27);	 
+            
+             myPixel.setRed(average);
+             myPixel.setBlue(average);
+             myPixel.setGreen(average);
+         }
+     } 
+	
+	 
+ }
+
+ 
 } // this } is the end of class Picture, put all new methods before this
